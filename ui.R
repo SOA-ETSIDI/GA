@@ -1,9 +1,6 @@
 library(shiny)
 library(shinyjs)
 
-dtOutput <- DT::dataTableOutput
-renderDT <- DT::renderDataTable
-
 source('init.R')
 
 

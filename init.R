@@ -1,6 +1,9 @@
 library(data.table)
 library(DT)
 
+dtOutput <- DT::dataTableOutput
+renderDT <- DT::renderDataTable
+
 source('../misc/funciones.R')
 source('../misc/defs.R')
 asignaturas <- fread('../misc/asignaturas.csv')
