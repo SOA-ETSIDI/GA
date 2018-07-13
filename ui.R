@@ -1,6 +1,4 @@
 library(shiny)
-library(shinyjs)
-
 source('init.R')
 
 
@@ -25,13 +23,22 @@ intro <- div(id = 'selector',
                               'Puedes reordenar la tabla pulsando en el título de la columna correspondiente.'
                          )))))
 tabla <- div(id = 'tabla',
-             fluidRow(dtOutput("asignaturas"))
-             )
+             fluidRow(
+                 column(12,
+                        selectInput('curso',
+                                    label = 'Curso Académico:',
+                                    choices = cursos,
+                                    selected = cursoActual)
+                        )
+             ),
+             fluidRow(
+                 column(12,
+                        dtOutput("asignaturas"))
+             ))
 
 ## UI completa
 shinyUI(
     fluidPage(
-        useShinyjs(),
         includeCSS("styles.css"),
         header,
         intro,

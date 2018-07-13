@@ -8,6 +8,9 @@ source('../misc/funciones.R')
 source('../misc/defs.R')
 asignaturas <- fread('../misc/asignaturas.csv')
 
+inicio <- as.numeric(substring(cursoActual, 1, 4))
+cursosNum <- inicio:(inicio - 3) ## Cuatro cursos académicos
+cursos <- paste(cursosNum, (cursosNum - 2000) + 1, sep = '-')
 
 ## No tengo en cuenta los dobles grados ni los másteres fuera de la
 ## ETSIDI
@@ -29,11 +32,3 @@ asignaturas[, Asignatura := factor(titlecase(Asignatura))]
 ## No incluyo el TFG/TFM
 asignaturas <- asignaturas[!grepl("Trabajo Fin", Asignatura)]
 
-## URL de la GA
-asignaturas[, Guia := paste0('<a href="',
-                            GAurl(Codigo,
-                                  CodTitulacion,
-                                  Semestre,
-                                  cursoActual),
-                            '" target=_blank>',
-                            Codigo, '</a>')]
