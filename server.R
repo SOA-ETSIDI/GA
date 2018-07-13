@@ -31,7 +31,7 @@ shinyServer(function(input, output, session)
     filter = 'top',
     options = list(
         autoWidth = TRUE,
-        pageLength = 6,
+        pageLength = 5,
         dom = 'tp',
         language = list(url = '//cdn.datatables.net/plug-ins/1.10.7/i18n/Spanish.json'))
     )
