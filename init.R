@@ -9,7 +9,8 @@ source('../misc/defs.R')
 asignaturas <- fread('../misc/asignaturas.csv')
 
 inicio <- as.numeric(substring(cursoActual, 1, 4))
-cursosNum <- inicio:(inicio - 3) ## Cuatro cursos académicos
+final <- 2015 ## En GAUSS están disponibles las guías desde el curso 2015-16
+cursosNum <- inicio:final 
 cursos <- paste(cursosNum, (cursosNum - 2000) + 1, sep = '-')
 
 ## No tengo en cuenta los dobles grados ni los másteres fuera de la
