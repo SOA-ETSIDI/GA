@@ -1,9 +1,7 @@
-library(shiny)
-
 source('init.R')
 
 
-shinyServer(function(input, output, session)
+server <- function(input, output, session)
 {
     output$asignaturas <- renderDT(
     {
@@ -35,4 +33,4 @@ shinyServer(function(input, output, session)
         dom = 'tp',
         language = list(url = '//cdn.datatables.net/plug-ins/1.10.7/i18n/Spanish.json'))
     )
-})
+}

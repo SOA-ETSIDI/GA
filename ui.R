@@ -37,12 +37,10 @@ tabla <- div(id = 'tabla',
              ))
 
 ## UI completa
-shinyUI(
-    fluidPage(
+ui <- fluidPage(
         includeCSS("styles.css"),
         header,
         intro,
         tabla
     )
-)
 
