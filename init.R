@@ -15,9 +15,8 @@ final <- 2015 ## En GAUSS están disponibles las guías desde el curso 2015-16
 cursosNum <- inicio:final 
 cursos <- paste(cursosNum, (cursosNum - 2000) + 1, sep = '-')
 
-## No tengo en cuenta los dobles grados ni los másteres fuera de la
-## ETSIDI
-codTitulaciones <- c(grados, masters)
+## No tengo en cuenta los dobles grados
+codTitulaciones <- c(grados, masters, otrosMaster)
 codTitulaciones <- codTitulaciones[!(codTitulaciones %in%
                                      c("56DM", "56EE"))]
 asignaturas <- asignaturas[Titulacion %in% codTitulaciones]
